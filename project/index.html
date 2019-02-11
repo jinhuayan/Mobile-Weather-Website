@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+    
+	<title>Weather App</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href='style.css' />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	
+    
+	
+
+
+</head>
+<body>
+<div id="pg1" data-role='page' data-theme='b'>   
+    <div data-role="panel" id="overlayPanel"  data-display="overlay">
+        <button id='compareBtn' data-icon='star'>Compare</a>
+    </div>
+    <div data-role='header' class='header'>
+        <a data-icon='bars' href='#overlayPanel'></a>
+        <h1>
+        Weather App
+        </h1>
+    </div>
+    <div data-role='main'>
+    <form>
+        <input type="text" name="city" id="city">
+    </form>
+        <button  id='submit'>Search</button>
+        
+    <canvas id="myChart"></canvas>
+    <div id='currentInfo'>
+        <h2 id='currentCity'></h2>
+        <h3 id='currentIcon'></h3>
+        <h2 id='currentTemp'></h2>
+    </div>
+        
+    <div id='currentTable'>
+     <table data-role='table' class='ui-responsive'>
+         <thead><tr><th></th><th></th></tr></thead>
+         <tbody>
+         <tr><td>Coulds</td><td id='clouds'></td></tr>
+         <tr><td>Humidity</td><td id='humidity'></td></tr>
+         <tr><td>Wind</td><td id='wind'></td></tr>
+         <tr><td>Pressure</td><td id='pressure'></td></tr>
+         <tr><td>Sunrise</td><td id='sunrise'></td></tr>
+         <tr><td>Sunset</td><td id='sunset'></td></tr>
+         </tbody>
+    </table>
+    </div>
+    </div>
+    <div data-role='footer'>
+    </div>
+
+</div>
+    
+
+<div id="pg2" data-role='page' data-theme='b'>   
+    <div data-role="panel" id="overlayPanel2" data-display="overlay" >
+        <button id='homeBtn' data-icon='star'>Home</a>
+    </div>
+    <div data-role='header'>
+        <a data-icon='bars' href='#overlayPanel2' ></a>
+       <h1>
+        Weather App
+        </h1>
+    </div>
+    <div data-role='main'>
+    <form>
+        <input type="text" name="city1" id="city1">
+        <input type="text" name="city2" id="city2">
+        <input type="text" name="city3" id="city3">
+    </form>
+        <button  id='compareSubmit'>Search</button>
+        <canvas id="compareChart"></canvas>
+    <div id='currentInfo1'>
+        <h2 id='currentCity1'></h2>
+        <h3 id='currentIcon1'></h3>
+        <h2 id='currentTemp1'></h2>
+    </div>
+     <div id='currentTable1' >
+     <table data-role='table' class='ui-responsive' >
+         <thead><tr><th></th><th></th></tr></thead>
+         <tbody>
+         <tr><td>Coulds</td><td id='clouds1'></td></tr>
+         <tr><td>Humidity</td><td id='humidity1'></td></tr>
+         <tr><td>Wind</td><td id='wind1'></td></tr>
+         <tr><td>Pressure</td><td id='pressure1'></td></tr>
+         <tr><td>Sunrise</td><td id='sunrise1'></td></tr>
+         <tr><td>Sunset</td><td id='sunset1'></td></tr>
+         </tbody>
+    </table>
+    </div>    
+    <div id='currentInfo2'>
+        <h2 id='currentCity2'></h2>
+        <h3 id='currentIcon2'></h3>
+        <h2 id='currentTemp2'></h2>
+    </div>
+     <div id='currentTable2' >
+     <table data-role='table' class='ui-responsive' >
+         <thead><tr><th></th><th></th></tr></thead>
+         <tbody>
+         <tr><td>Coulds</td><td id='clouds2'></td></tr>
+         <tr><td>Humidity</td><td id='humidity2'></td></tr>
+         <tr><td>Wind</td><td id='wind2'></td></tr>
+         <tr><td>Pressure</td><td id='pressure2'></td></tr>
+         <tr><td>Sunrise</td><td id='sunrise2'></td></tr>
+         <tr><td>Sunset</td><td id='sunset2'></td></tr>
+         </tbody>
+    </table>
+    </div>        
+    <div id='currentInfo3'>
+        <h2 id='currentCity3'></h2>
+        <h3 id='currentIcon3'></h3>
+        <h2 id='currentTemp3'></h2>
+    </div>
+     <div id='currentTable3' >
+     <table data-role='table' class='ui-responsive' >
+         <thead><tr><th></th><th></th></tr></thead>
+         <tbody>
+         <tr><td>Coulds</td><td id='clouds3'></td></tr>
+         <tr><td>Humidity</td><td id='humidity3'></td></tr>
+         <tr><td>Wind</td><td id='wind3'></td></tr>
+         <tr><td>Pressure</td><td id='pressure3'></td></tr>
+         <tr><td>Sunrise</td><td id='sunrise3'></td></tr>
+         <tr><td>Sunset</td><td id='sunset3'></td></tr>
+         </tbody>
+    </table>
+    </div>        
+    </div>
+    <div data-role='footer'>
+    </div>
+
+</div>    
+    
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBECVqEE-i2Vni306V-aXYKXgg0yUA0HpA_w&libraries=places&callback=initMap" async defer></script>
+<script src="script.js" ></script>
+</html>

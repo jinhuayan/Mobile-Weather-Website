@@ -1,0 +1,15 @@
+#currentInfo,#currentInfo1,#currentInfo2,#currentInfo3{
+    width:90%;
+    margin: auto 
+}
+
+#currentTable, #currentTable2, #currentTable1, #currentTable3{
+    width:90%;
+    margin: auto
+}
+
+
+
+#currentTable tr,#currentTable1 tr,#currentTable2 tr,#currentTable3  tr {
+    border-bottom: 1px solid #d6d6d6;
+    }
